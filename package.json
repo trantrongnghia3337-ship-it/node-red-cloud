@@ -6,7 +6,9 @@
     "start": "node node_modules/node-red/red.js -p $PORT -u ./data"
   },
   "dependencies": {
-    "node-red": "^3.1.0"
+    "node-red": "^3.1.0",
+    "node-red-contrib-ui-led": "^0.4.11",
+    "node-red-dashboard": "^3.6.6"
   },
   "engines": {
     "node": "20.x"
