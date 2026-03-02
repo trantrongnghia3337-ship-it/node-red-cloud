@@ -1,0 +1,11 @@
+{
+  "name": "node-red-cloud",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node-red -p $PORT -u ./data"
+  },
+  "dependencies": {
+    "node-red": "^3.1.0"
+  }
+}

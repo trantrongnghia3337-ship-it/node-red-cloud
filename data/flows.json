@@ -1,0 +1,995 @@
+[
+    {
+        "id": "884d4026b0695f0c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "32c368e1abc03f2e",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f8b42e3c558dfdf5",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3c482d62aace2625",
+        "type": "websocket-listener",
+        "path": "/ws/motor",
+        "wholemsg": "false"
+    },
+    {
+        "id": "a6861484a63dd5e4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#53c2ee",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#53c2ee",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#53c2ee",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#99dbf5",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#53c2ee",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f20d248182194bd6",
+        "type": "ui_tab",
+        "name": "HỆ THỐNG GIÁM SÁT ĐỘNG CƠ",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "af673f50b8819633",
+        "type": "ui_group",
+        "name": "Bảng điều khiển",
+        "tab": "f20d248182194bd6",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "aa38fdd92f7afa47",
+        "type": "ui_group",
+        "name": "Tham Số Động Cơ",
+        "tab": "f20d248182194bd6",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c646615f763c92fa",
+        "type": "ui_group",
+        "name": "Đồng hồ tốc độ",
+        "tab": "f20d248182194bd6",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7398defbcae0483e",
+        "type": "ui_group",
+        "name": "Bảng trạng thái",
+        "tab": "f20d248182194bd6",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7379e934283595e3",
+        "type": "ui_group",
+        "name": "Biểu đồ đáp ứng tốc độ",
+        "tab": "f20d248182194bd6",
+        "order": 5,
+        "disp": true,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "377a89ef7cd3ea56",
+        "type": "ui_button",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Bật ",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ee6f0263fe25bd3",
+        "type": "ui_button",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Tắt",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f1a16326b4efae9",
+        "type": "ui_switch",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "label": "Bật/Tắt PID",
+        "tooltip": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "0c03e883612dc625",
+                "d872932fdca172b3",
+                "dcfdfb51717f6cb4"
+            ]
+        ]
+    },
+    {
+        "id": "d872932fdca172b3",
+        "type": "ui_numeric",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "label": "Ki",
+        "tooltip": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 370,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c03e883612dc625",
+        "type": "ui_numeric",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "label": "Kp",
+        "tooltip": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 370,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcfdfb51717f6cb4",
+        "type": "ui_numeric",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "label": "Kd",
+        "tooltip": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 370,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1760e07446c7f28a",
+        "type": "ui_chart",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Biểu đồ tốc độ thực",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1010,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b980eb1ca8dc9cac",
+        "type": "ui_text_input",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "label": "Giá trị hiện tại",
+        "tooltip": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1020,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e83bcfcbd2882c02",
+        "type": "ui_led",
+        "z": "884d4026b0695f0c",
+        "order": 0,
+        "group": "ui_group",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": false,
+                "valueType": "bool"
+            },
+            {
+                "color": "green",
+                "value": true,
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1030,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f2e748c34d324bfa",
+        "type": "ui_button",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Chạy thuận",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a5f45ec71066445",
+        "type": "ui_button",
+        "z": "884d4026b0695f0c",
+        "name": "",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Chạy nghịch",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ddf2a72762d1d23",
+        "type": "ui_button",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "group": "af673f50b8819633",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Bật",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#3B82F6",
+        "className": "",
+        "icon": "power_settings_new",
+        "payload": "On",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "dfa8b503107eb448"
+            ]
+        ]
+    },
+    {
+        "id": "8df8a01fee66f22d",
+        "type": "ui_button",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "group": "af673f50b8819633",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Tắt",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#3B82F6",
+        "className": "",
+        "icon": "stop",
+        "payload": "Off",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "dfa8b503107eb448"
+            ]
+        ]
+    },
+    {
+        "id": "2ca7e7687475060f",
+        "type": "ui_dropdown",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "label": "Chiều quay",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "af673f50b8819633",
+        "order": 2,
+        "width": "7",
+        "height": "2",
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Thuận ",
+                "value": "FWD",
+                "type": "str"
+            },
+            {
+                "label": "Nghịch",
+                "value": "REV",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "e2e53f4096d8d6a9"
+            ]
+        ]
+    },
+    {
+        "id": "a2a87026131e0c19",
+        "type": "ui_switch",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "label": "Tự động",
+        "tooltip": "",
+        "group": "aa38fdd92f7afa47",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "7aca6d4bb7f93191"
+            ]
+        ]
+    },
+    {
+        "id": "06310c9b45c458b0",
+        "type": "ui_slider",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "label": "Tốc độ tham chiếu",
+        "tooltip": "",
+        "group": "aa38fdd92f7afa47",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "3000",
+        "step": 1,
+        "className": "",
+        "x": 190,
+        "y": 540,
+        "wires": [
+            [
+                "14527e4dd80a1575"
+            ]
+        ]
+    },
+    {
+        "id": "14527e4dd80a1575",
+        "type": "ui_numeric",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "label": "Tốc độ đặt",
+        "tooltip": "",
+        "group": "aa38fdd92f7afa47",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 390,
+        "y": 540,
+        "wires": [
+            [
+                "6a478de0ca333e0a"
+            ]
+        ]
+    },
+    {
+        "id": "6a478de0ca333e0a",
+        "type": "ui_gauge",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "group": "c646615f763c92fa",
+        "order": 0,
+        "width": "6",
+        "height": "3",
+        "gtype": "gage",
+        "title": "RPM",
+        "label": "rpm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3000",
+        "colors": [
+            "#12af12",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3e4be68c10548d2d",
+        "type": "ui_led",
+        "z": "f8b42e3c558dfdf5",
+        "order": 0,
+        "group": "7398defbcae0483e",
+        "width": "3",
+        "height": "1",
+        "label": "Đang chạy",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#f9f1f1",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 490,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "67728245ddf49c74",
+        "type": "ui_led",
+        "z": "f8b42e3c558dfdf5",
+        "order": 5,
+        "group": "7398defbcae0483e",
+        "width": "3",
+        "height": "1",
+        "label": "Sẵn sàng",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#e4aaaa",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#f40b0b",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 490,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8cc7165e6f804d1c",
+        "type": "ui_led",
+        "z": "f8b42e3c558dfdf5",
+        "order": 1,
+        "group": "7398defbcae0483e",
+        "width": "3",
+        "height": "1",
+        "label": "Quay thuận",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#d4c9c9",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#414ce6",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 510,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5e92d50acbc10e1d",
+        "type": "ui_led",
+        "z": "f8b42e3c558dfdf5",
+        "order": 2,
+        "group": "7398defbcae0483e",
+        "width": "3",
+        "height": "1",
+        "label": "Quay nghịch",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#f7f7fd",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "",
+        "x": 510,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7aca6d4bb7f93191",
+        "type": "ui_led",
+        "z": "f8b42e3c558dfdf5",
+        "order": 3,
+        "group": "7398defbcae0483e",
+        "width": "3",
+        "height": "1",
+        "label": "Tự động",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ffffff",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#fcff42",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 350,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ed4516405c921104",
+        "type": "ui_led",
+        "z": "f8b42e3c558dfdf5",
+        "order": 4,
+        "group": "7398defbcae0483e",
+        "width": "3",
+        "height": "1",
+        "label": "Báo lỗi ",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#f8f6f6",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#ff1ff8",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "069bb74c43e8475a",
+        "type": "ui_chart",
+        "z": "f8b42e3c558dfdf5",
+        "name": "",
+        "group": "7379e934283595e3",
+        "order": 0,
+        "width": "15",
+        "height": "5",
+        "label": "Biểu đồ",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "3000",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 540,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfa8b503107eb448",
+        "type": "function",
+        "z": "f8b42e3c558dfdf5",
+        "name": "function 1",
+        "func": "if (msg.payload === \"On\") {\n    return [\n        { payload: true },   // LED Đang chạy\n        { payload: false }   // LED Sẵn sàng\n    ];\n}\n\nif (msg.payload === \"Off\") {\n    return [\n        { payload: false },  // LED Đang chạy\n        { payload: true }    // LED Sẵn sàng\n    ];\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 80,
+        "wires": [
+            [
+                "3e4be68c10548d2d"
+            ],
+            [
+                "67728245ddf49c74"
+            ]
+        ]
+    },
+    {
+        "id": "e2e53f4096d8d6a9",
+        "type": "function",
+        "z": "f8b42e3c558dfdf5",
+        "name": "function 2",
+        "func": "if (msg.payload === \"FWD\") {\n    return [\n        { payload: true },   // LED Quay thuận\n        { payload: false }   // LED Quay nghịch\n    ];\n}\n\nif (msg.payload === \"REV\") {\n    return [\n        { payload: false },  // LED Quay thuận\n        { payload: true }    // LED Quay nghịch\n    ];\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 300,
+        "wires": [
+            [
+                "8cc7165e6f804d1c",
+                "5e92d50acbc10e1d"
+            ]
+        ]
+    }
+]
